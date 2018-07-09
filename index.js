@@ -15,17 +15,16 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 */
 
-  const requestHandler = (request, response) => {
-	  console.log(request.url)
-	  response.end('Hello Node.js Server!')
-	}
+var express = require('express');
+var app = express();
 
-	const server = http.createServer(requestHandler)
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
 
-	server.listen(PORT, (err) => {
-	  if (err) {
-	    return console.log('something bad happened', err)
-	  }
-
-	  console.log(`server is listening on ${PORT}`)
-	})
+var server = app.listen(PORT, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Example app listening at http://%s:%s", host, port)
+})
