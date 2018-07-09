@@ -1,8 +1,6 @@
 const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
-
-const http = require('http')
 const PORT = process.env.PORT || 5000
 
 /*
@@ -15,7 +13,6 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 */
 
-var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
